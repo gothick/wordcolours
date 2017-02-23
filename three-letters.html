@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Word Colours</title>
+  <meta name="description" content="Word Colours">
+  <meta name="author" content="Matt Gibson">
+  <style type="text/css">
+    body {
+      font-family: sans-serif;
+      width: 600px;
+      margin: 0 auto;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul li {
+      font-weight: bold;
+      display: inline-block;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100px;
+      text-align: center;
+    }
+    #accede {
+      background-color: #accede;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    /* Because hard-coding them would be more of a pain when there are so many. */
+    $(function() {
+      var colours = [
+        "aba",
+        "abb",
+        "ace",
+        "add",
+        "ade",
+        "baa",
+        "bac",
+        "bad",
+        "bae",
+        "bed",
+        "bee",
+        "cab",
+        "cad",
+        "cee",
+        "dab",
+        "dad",
+        "dae",
+        "deb",
+        "dee",
+        "ebb",
+        "fad",
+        "fae",
+        "fed",
+        "fee"
+      ];
+      var ul = $("#colours");
+      for (var i=0; i<colours.length; i++) {
+        var colour_name = colours[i];
+        var colour_value = '#' + colours[i];
+        var elem = $('<li>' + colour_name + '</li>').css('background-color', colour_value);
+        ul.append(elem);
+      }
+    });
+  </script>
+</head>
+<body>
+  <h1>Three-letter dictionary colours.</h1>
+  <ul id="colours">
+  </ul>
+</body>
+</html>
